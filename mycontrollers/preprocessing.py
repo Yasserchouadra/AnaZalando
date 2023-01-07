@@ -6,21 +6,6 @@ pd.options.mode.chained_assignment = None
 
 
 
-
-
-my_product = ""
-my_sexe =  ""
-
-
-
-def set_infos (s,p):
-     my_sexe = s
-     my_product = p
-     return my_sexe , my_product
-
-
-
-
 # pre processing  
 def treat_finalprice(x):
     x = x.replace("," , ".")

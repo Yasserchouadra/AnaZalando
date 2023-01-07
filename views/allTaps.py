@@ -12,7 +12,11 @@ from assets.additional_css import tab_style
 from assets.additional_css import tab_selected_style
 
 
-from views.price import price
+from views.price_best import price_best
+from views.price_cheap import price_cheap
+from views.price_average import price_average
+from views.price_expensive import price_expensive
+
 from views.brand import make_marque
 
 
@@ -38,6 +42,28 @@ def make_taps():
 
                                                 
                                                     dcc.Tab(
+                                                                label='Find your best Brand', 
+                                                                style=tab_style, 
+                                                                selected_style=tab_selected_style,
+                                                                children=[
+                                                                    dbc.Container(
+                                                                        style = {
+                                                                            "width":"1000px",
+                                                                            'height': '1200px',
+                                                                            'padding': '25px',
+
+                                                                        },
+                                                                        children=[
+                                                                            make_marque()
+
+                                                                        ]
+                                                                        ),
+                                                                                
+                                                                            
+                                                                                ]
+                                                            ),
+                                                            
+                                                    dcc.Tab(
                                                                 label='Best recommanded products',
                                                                 style=tab_style, 
                                                                 selected_style=tab_selected_style,
@@ -50,7 +76,7 @@ def make_taps():
 
                                                                         },
                                                                         children=[
-                                                                               price("best")
+                                                                               price_best()
                                                                          ]
                                                                         ),
                                                                                 
@@ -72,7 +98,7 @@ def make_taps():
 
                                                                         },
                                                                         children=[
-                                                                               price("cheap")
+                                                                               price_cheap()
                                                                          ]
                                                                         ),
                                                                                 
@@ -94,7 +120,7 @@ def make_taps():
 
                                                                         },
                                                                         children=[
-                                                                               price("average")
+                                                                               price_average()
                                                                          ]
                                                                         ),
                                                                                 
@@ -115,7 +141,7 @@ def make_taps():
 
                                                                         },
                                                                         children=[
-                                                                               price("expensive")
+                                                                               price_expensive()
                                                                          ]
                                                                         ),
                                                                                 
@@ -123,27 +149,6 @@ def make_taps():
                                                                         ]
                                                             ),                                                                                                                      
 
-                                                    dcc.Tab(
-                                                                label='Find your best Brand', 
-                                                                style=tab_style, 
-                                                                selected_style=tab_selected_style,
-                                                                children=[
-                                                                    dbc.Container(
-                                                                        style = {
-                                                                            "width":"1000px",
-                                                                            'height': '1200px',
-                                                                            'padding': '25px',
-
-                                                                        },
-                                                                        children=[
-                                                                            make_marque()
-
-                                                                        ]
-                                                                        ),
-                                                                                
-                                                                            
-                                                                                ]
-                                                            ),
 
                                                 
                                                             

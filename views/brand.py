@@ -17,7 +17,7 @@ from mycontrollers.brandController import get_fig_analyse_brands
 
 
 rang_slider = 0.5
-mysexe = "homme"
+my_sexe = "homme"
 my_product = "chemise"
 
 df = get_df_products()
@@ -35,7 +35,7 @@ def make_marque():
                            html.H6("Select your sexe"),
                            dcc.Dropdown(
                                     ["homme","femme"],
-                                    mysexe,
+                                    my_sexe,
                                     id='select_sexe',
                             ),
                             html.Br(),
@@ -124,8 +124,9 @@ def filter_countries(sexe,prod,rangs):
         rang_slider = rangs
 
         selected_df = select_products(df,my_product,my_sexe, "all")
+        
         fig1  = get_best_Brands_fig(selected_df,rang_slider) 
         fig2 = get_comparaison_fig(selected_df,rang_slider)
         fig3 = get_number_products_fig(selected_df)
-        fig4 = get_fig_analyse_brands(df,my_product,my_sexe)
+        fig4 = get_fig_analyse_brands(df,selected_df,my_product,my_sexe)
         return fig1 , fig2 , fig3,fig4

@@ -35,7 +35,7 @@ def get_best_Brands_fig(selected_df,selected_rang):
     df_res = get_Brands(selected_df, selected_rang)
     fig = px.histogram(
                         df_res,
-                        x="mark",
+                         x="mark",
                          y="promo",
                          color ="mark",
                          template='plotly_dark',
@@ -109,10 +109,9 @@ def get_df_trendbrand(trend_brands,df,product,sexe):
 
 
 # function 3
-def get_fig_analyse_brands(df, product,sexe):
-    selected_df = select_products(df,product,sexe, "all")
+def get_fig_analyse_brands(df_origin , selected_df,my_product,my_sexe):
     trend_brands = get_number_products_df(selected_df).head(5)["mark"].tolist()
-    final_sel_df = get_df_trendbrand(trend_brands,df,product,sexe)
+    final_sel_df = get_df_trendbrand(trend_brands,df_origin,my_product,my_sexe)
     fig1 = px.scatter(final_sel_df, 
                      x="mark",
                      y="finalprice",

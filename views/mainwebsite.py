@@ -39,16 +39,8 @@ MainWebsite =  html.Div([
                     )
 
 
-@app.callback(
-    Output('loading-output-spinner', 'children'),
-    Input('submit-val', 'n_clicks'),
-    State('product_searched', 'value')
-)
-def update_output(n_clicks, product_searched):
-    if n_clicks:
-        return make_taps()
-    else :
-          return html.Div(
+
+description_website = html.Div(
             style={"margin":"50px 5px 5px 50px" },
             children=[ 
                 html.H3("Home page,  "),
@@ -74,3 +66,15 @@ def update_output(n_clicks, product_searched):
                 ]
                         
                          )
+@app.callback(
+    Output('loading-output-spinner', 'children'),
+    Input('submit-val', 'n_clicks'),
+    State('product_searched', 'value')
+)
+def update_output(n_clicks, product_searched):
+    if n_clicks:
+        return make_taps()
+    else :
+        return make_taps()
+
+        # return description_website
