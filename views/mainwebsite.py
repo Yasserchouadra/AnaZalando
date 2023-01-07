@@ -75,6 +75,4 @@ def update_output(n_clicks, product_searched):
     if n_clicks:
         return make_taps()
     else :
-        return make_taps()
-
-        # return description_website
+        return description_website
