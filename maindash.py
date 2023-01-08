@@ -1,6 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 
+# Instance de l'application dash pour la gestion des événements
 dbc_css = ("https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates@V1.0.2/dbc.min.css")
 external_stylesheets = dbc.themes.BOOTSTRAP
 
