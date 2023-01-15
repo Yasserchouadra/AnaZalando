@@ -11,6 +11,7 @@ from views.mainwebsite import MainWebsite
 
 
 
+
 def make_layout():
     return html.Div([
                     Mainnavbar,
